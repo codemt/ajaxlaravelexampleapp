@@ -32,6 +32,8 @@
                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
                crossorigin="anonymous">
       </script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
       <script>
          $(document).ready(function(){
             $('#ajaxSubmit').click(function(e){
@@ -50,11 +52,13 @@
                      price: $('#price').val()
                   },
                   success: function(result){
+                    toastr.success('Record Activated Successfully');
                      $('.alert').show();
                      $('.alert').html(result.success);
                   },
                   error: function (data) {
                      console.log('Error:', data);
+                     
                     }
                 });
 
